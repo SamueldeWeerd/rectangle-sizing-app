@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, model } from '@angular/core';
 
 @Component({
   selector: 'app-rect',
@@ -10,7 +10,9 @@ import { Component } from '@angular/core';
 export class RectComponent {
   // Todo: Implement custom two-way binding
 
+  size = model.required<{width: string, height: string}>();
+
   onReset() {
-    // ...
+    this.size.set({width: '100', height: '100'});
   }
 }
